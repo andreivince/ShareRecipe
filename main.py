@@ -1,16 +1,9 @@
-from flask import Flask, render_template, request
+from website import create_app
 
-app = Flask(__name__)
+app = create_app()
 
-
-@app.route('/')
-def index():
-    return render_template('index.html')
-
-@app.route('/handle_data', methods=['POST'])
-def handle_data():
-    name = request.form['name']
-    return render_template('result.html', name=name)
-
-
-# flask --app main run
+if __name__ == '__main__':
+    app.run(debug=True)
+    
+    #Study 
+    # GET POST (HTTP REQUEST)
