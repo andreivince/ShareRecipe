@@ -20,10 +20,10 @@ def sign_up():
         password2 = request.form.get("password2")
         
         if len(email) < 4:
-            flash("Email must be greater", category="error")
+            flash("Email Incorrect", category="error")
             pass
         elif len(firstName) < 2:
-            flash("Name must be greater", category="error")
+            flash("Name must be greater than 2 characters", category="error")
             pass
         elif password1 != password2:
             flash("Passwords don\'t match", category="error")
