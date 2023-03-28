@@ -7,3 +7,4 @@ if __name__ == '__main__':
     
     #Study 
     # GET POST (HTTP REQUEST)
+    #JSON
