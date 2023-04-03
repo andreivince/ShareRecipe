@@ -8,6 +8,7 @@ class Recipe(db.Model):
     title = db.Column(db.String(30))
     category = db.Column(db.String(30))
     user_name = db.Column(db.Integer, db.ForeignKey('user.first_name'))
+    
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)

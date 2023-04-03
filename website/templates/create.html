@@ -1,0 +1,15 @@
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/create.css') }}">
+
+{% extends "base.html" %}
+{% block title %}Your Recipe{% endblock %}
+
+{% block content%}
+    <h1>Add Your Recipe</h1>
+    <form method="POST" action="{{ url_for('auth.create') }}">
+        <input class="form-control" type="text" name="title" placeholder="Title" required>
+        <input class="form-control" type="text" name="category" placeholder="Category" required>
+        <textarea class="form-control" name="ingredients" placeholder="Ingredients" required></textarea>
+        <textarea class="form-control" name="instructions" placeholder="Instructions" required></textarea>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+{% endblock %}

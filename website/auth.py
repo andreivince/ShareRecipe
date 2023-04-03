@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
-from .models import User
+from .models import User, Recipe
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
 from flask_login import login_user, login_required, logout_user, current_user
@@ -8,6 +8,19 @@ from flask import Flask, render_template, request, redirect, url_for, flash, get
 
 
 auth = Blueprint('auth', __name__)
+
+@auth.route('/create', methods=["GET", "POST"])
+@login_required
+def create():
+    if request.method == "POST":
+        name_recipe = request.form.get("name")
+        new_recipe = Recipe(name=name_recipe, user_id=current_user.id)
+        db.session.add(new_recipe)
+        db.session.commit()
+        return redirect(url_for('views.home'))
+
+    return render_template("create.html", user=current_user, Recipe=new_recipe)
+
 
 @auth.route('/about')
 def about():
