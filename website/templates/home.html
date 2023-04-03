@@ -1,3 +1,14 @@
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css') }}">
+
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
-# Exact the same thing but with the overwrite code
+
+{% block content%}
+        <div class="title_add">
+            <h1 class="title_home">ShareRecipe<h1> 
+            <button type="button" class="btn btn-primary btn" >+</button>
+        </div>
+        <p class="name_recipe">Lasanha a Bolonhesa</p>
+        
+
+{% endblock %}

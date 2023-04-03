@@ -1,0 +1,24 @@
+.title_home{
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 55px;
+}
+
+.intro_home {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.welcome_button {
+    padding-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

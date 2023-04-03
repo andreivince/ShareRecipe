@@ -1,0 +1,12 @@
+.title_add {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    align-items: center;
+}
+.title_home {
+    margin-right: 10px;
+}
+.name_recipe {
+    font-size: 15px;
+}

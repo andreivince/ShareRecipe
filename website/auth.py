@@ -9,6 +9,10 @@ from flask import Flask, render_template, request, redirect, url_for, flash, get
 
 auth = Blueprint('auth', __name__)
 
+@auth.route('/about')
+def about():
+    return render_template("about.html", user=current_user) 
+   
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
