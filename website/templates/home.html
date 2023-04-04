@@ -8,8 +8,11 @@
             <h1 class="title_home">ShareRecipe<h1> 
                 <a href="{{ url_for('auth.create') }}" class="btn btn-primary btn-lg" role="button">+</a>
             </div>
-        <a href="#" class="recipe-link">
-            <p class="name_recipe">{{recipe.title}}</p>
-          </a>        
+        {% for recipe in recipes %}
+        <a href="{{ url_for('views.recipe', recipe_id=recipe.id) }}" class="recipe-link">
+            <p class="name_recipe">{{ recipe.title }}</p>
+        </a>
+        
+        {% endfor %}
 
 {% endblock %}
