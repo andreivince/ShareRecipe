@@ -9,12 +9,6 @@ from flask import Flask, render_template, request, redirect, url_for, flash, get
 
 auth = Blueprint('auth', __name__)
 
-@auth.route("/recipe/<int:recipe_id>")
-@login_required
-def recipe(recipe_id):
-    recipe = Recipe.query.get_or_404(recipe_id)
-    return render_template("recipe.html", user=recipe.user, recipe=recipe)
-
 
 @auth.route('/create', methods=["GET", "POST"])
 @login_required
@@ -24,15 +18,19 @@ def create():
         category = request.form.get('category')
         ingredients = request.form.get('ingredients')
         instructions = request.form.get('instructions')
+        author = request.form.get('author')
 
-        new_recipe = Recipe(title=title, category=category, ingredients=ingredients, instructions=instructions, user_name=current_user.first_name)
+        new_recipe = Recipe(title=title, category=category, ingredients=ingredients, instructions=instructions, author=current_user)
         db.session.add(new_recipe)
         db.session.commit()
 
         flash('Recipe created!', category='success')
+        recipe_id = new_recipe.id
         return redirect(url_for('views.home'))
 
     return render_template("create.html", user=current_user)
+
+
 
 
 

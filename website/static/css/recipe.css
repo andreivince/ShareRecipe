@@ -1,0 +1,13 @@
+.recipe {
+    padding-top: 30px;
+}
+
+.label_recipe {
+    font-size: 22px;
+    background-color: #027cff61;
+    padding-left: 10px; /* Add 10px of padding to the left of the content */
+}
+
+.user_recipe {
+    padding-left: 10px;
+}
