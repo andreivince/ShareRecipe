@@ -1,0 +1,24 @@
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/search.css') }}">
+
+
+{% extends "base.html" %}
+{% block title %}Search{% endblock %}
+
+{% block content %}
+  <div class="search"> 
+    <h1>Search</h1>
+    <form method="POST">
+        <input type="text" class="form-control" id="searchBar" name="searchBar" placeholder="Search for Recipe">
+    </form>
+    {% if recipes %}
+            <div class="recipe-titles">
+                {% for recipe in recipes %}
+                  <a href="{{ url_for('views.recipe', recipe_id=recipe.id) }}">
+                  <p>{{ recipe.title }}</p>
+                  </a>
+                {% endfor %}
+            </div>
+            {% endif %}
+            
+  </div>
+{% endblock %}

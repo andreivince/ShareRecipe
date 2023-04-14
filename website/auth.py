@@ -9,6 +9,16 @@ from flask import Flask, render_template, request, redirect, url_for, flash, get
 
 auth = Blueprint('auth', __name__)
 
+@auth.route('/search', methods=["GET", "POST"])
+@login_required
+def search():
+    recipes = []
+    if request.method == "POST":
+        searchBar = request.form.get("searchBar")
+        recipes = Recipe.query.filter(Recipe.title.contains(searchBar)).all()
+
+    return render_template("search.html", user=current_user, recipes=recipes)
+
 
 @auth.route('/create', methods=["GET", "POST"])
 @login_required

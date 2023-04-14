@@ -7,6 +7,7 @@
         <div class="title_add">
             <h1 class="title_home">ShareRecipe<h1> 
                 <a href="{{ url_for('auth.create') }}" class="btn btn-primary btn-lg" role="button">+</a>
+                <a href="{{ url_for('auth.search') }}" class="btn btn-primary btn-lg" role="button">?</a>
             </div>
         {% for recipe in recipes %}
         <a href="{{ url_for('views.recipe', recipe_id=recipe.id) }}" class="recipe-link">
