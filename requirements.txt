@@ -25,7 +25,7 @@ discord.py==1.7.3
 executing==1.2.0
 face-recognition-models==0.3.0
 fastjsonschema==2.16.3
-Flask==2.3.3
+Flask==2.2.5
 Flask-Login==0.6.2
 Flask-SQLAlchemy==3.0.3
 fqdn==1.5.1
