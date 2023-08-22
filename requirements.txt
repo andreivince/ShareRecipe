@@ -120,3 +120,4 @@ websocket-client==1.5.1
 Werkzeug==2.2.3
 widgetsnbextension==4.0.5
 yarl==1.8.2
+gunicorn==21.2.0
