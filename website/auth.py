@@ -109,3 +109,15 @@ def sign_up():
 # Views of the bar
 # line 8 is collecting data
 #Message flashing import flash
+
+@auth.route('/delete/<int:recipe_id>', methods=['POST'])
+@login_required
+def delete_recipe(recipe_id):
+    recipe = Recipe.query.get_or_404(recipe_id)
+    if recipe.user == current_user:
+        db.session.delete(recipe)
+        db.session.commit()
+        flash('Recipe deleted!', category='success')
+    else:
+        flash('You can only delete your own recipes!', category='error')
+    return redirect(url_for('views.home'))

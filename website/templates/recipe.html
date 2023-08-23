@@ -13,5 +13,10 @@
     <p class="label_recipe">Instructions:</p>
     <p class="user_recipe">{{ recipe.instructions }}</p>
     <p class="label_recipe">Posted by: {{ recipe.user.first_name }}</p>
-  </div>
+    {% if recipe.user == current_user %}
+    <form action="{{ url_for('auth.delete_recipe', recipe_id=recipe.id) }}" method="post">
+        <button type="submit" class="btn btn-danger">Delete Recipe</button>
+    </form>
+    {% endif %}
+</div>
 {% endblock %}
