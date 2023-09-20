@@ -1,11 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
 .title_add {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 50px;
+    padding-bottom: 20px;
     display: flex;
     align-items: center;
 }
 .title_home {
     margin-right: 10px;
+    font-weight: 600;
 }
 .name_recipe {
     font-size: 20px;
